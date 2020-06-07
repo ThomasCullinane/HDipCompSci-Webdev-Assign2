@@ -2,7 +2,6 @@ package controllers;
 
 import models.Assessment;
 import models.Member;
-import models.Todo;
 import play.Logger;
 import play.mvc.Controller;
 

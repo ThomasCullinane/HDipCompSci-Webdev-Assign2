@@ -2,10 +2,8 @@ package controllers;
 
 import models.Assessment;
 import models.Member;
-import models.Todo;
 import models.Trainer;
 import play.Logger;
-import play.db.Model;
 import play.mvc.Controller;
 
 import java.util.Collections;
