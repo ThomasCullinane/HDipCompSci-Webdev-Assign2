@@ -39,7 +39,6 @@ public class Dashboard extends Controller
   public static void profile() {
     Logger.info("Rendering Profile");
     Member member = Accounts.getLoggedInMember();
-    List<Assessment> assessments = member.assessments;
     boolean bool = true;
     render("profile.html", member, bool);
   }

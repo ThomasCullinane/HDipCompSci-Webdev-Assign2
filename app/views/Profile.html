@@ -1,10 +1,10 @@
 #{extends 'main.html' /}
 #{set title:'Profile' /}
-#{welcomemenu id:"profile"/}
+#{menu id:"profile"/}
 
 <div class="ui two column grid basic middle aligned segment">
     <div class="column">
-        <form class="ui stacked segment form" action="/${member.id}/update" method="POST">
+        <form class="ui stacked segment form" action="/profile/${member.id}/update" method="POST">
             <h3 class="ui header">Update Profile</h3>
             <div class="one field">
                 <div class="field">
@@ -12,7 +12,7 @@
                     <input placeholder="Name" type="text" name="name">
                 </div>
             </div>
-            <div class="two fields">
+            <div class="three fields">
                 <div class="field">
                     <div class="ui right labeled input">
                         <input placeholder="Enter Height" type="text" name="height">
@@ -32,9 +32,6 @@
                 <div class="field" >
                     <input placeholder="Gender" type="text" name="gender">
                 </div>
-            </div>
-            <div class="field">
-
             </div>
             <div class="field">
                 <label>Password</label>
