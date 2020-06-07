@@ -1,0 +1,73 @@
+Assessment(a1):
+  timestamp:
+  weight: 120
+  chest: 45
+  thigh: 12
+  upperarm: 23
+  waist: 32
+  hips: 38
+  comment: b
+
+Assessment(a2):
+  timestamp:
+  weight: 122
+  chest: 45
+  thigh: 12
+  upperarm: 23
+  waist: 32
+  hips: 38
+  comment: b
+
+Assessment(a3):
+  timestamp:
+  weight: 123
+  chest: 45
+  thigh: 12
+  upperarm: 23
+  waist: 32
+  hips: 38
+  comment: b
+
+Assessment(a4):
+  timestamp:
+  weight: 91
+  chest: 45
+  thigh: 12
+  upperarm: 23
+  waist: 30
+  hips: 38
+  comment: a
+
+Member(m1):
+  name: homer simpson
+  email: homer@simpson.com
+  password: secret
+  address: Evergreen Terrace
+  gender: Male
+  height: 2.0
+  startWeight: 75
+  assessments:
+  - a1
+  - a2
+  - a3
+
+Member(m2):
+  name: marge simpson
+  email: marge@simpson.com
+  password: secret
+  address: Evergreen Terrace
+  gender: Female
+  height: 1.65
+  startWeight: 100
+  assessments:
+  - a4
+
+Trainer(t1):
+  name: lisa simpson
+  email: lisa@simpson.com
+  password: secret
+  address: Evergreen Terrace
+  gender: Female
+  height: 1.30
+  startWeight: 70
+  speciality: arms

@@ -1,0 +1,86 @@
+#{extends 'main.html' /}
+#{set title:'Trainer Dashboard' /}
+
+#{menu id:"trainer"/}
+<section class="ui raised segment">
+    <header class="ui header">
+        Member List
+    </header>
+    <table class="ui fixed table">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th></th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <div class="ui bulleted list">
+        #{list items:memberList, as:'members'}
+            <tr>
+                <td> ${members.name} </td>
+                #{if bool}
+                    <td class="right aligned"> <a href="/trainer " class="ui tiny grey button"> Return to Member List </a> </td>
+                #{/if}
+                #{else }
+                    <td class="right aligned"> <a href="/trainer/${members.id} " class="ui tiny blue button"> View Assessments </a> </td>
+                #{/else}
+                <td class="right aligned"> <a href="/trainer/${members.id}/deletemember " class="ui small red button"> <i class="trash alternate icon"></i> </a> </td>
+            </tr>
+
+        #{/list}
+        </div>
+        </tbody>
+    </table>
+</section>
+#{if bool}
+#{list items:memberList, as:'members'}
+#{list items:assessments, as:'assessment'}
+<header class="ui header">
+${members.name}'s Assessments
+</header>
+<section class="ui raised segment">
+
+
+
+    <table class="ui fixed table">
+        <thead>
+        <tr>
+            <th>Date</th>
+            <th>Weight</th>
+            <th>Chest</th>
+            <th>Thigh</th>
+            <th>Upper Arm</th>
+            <th>Waist</th>
+            <th>Hips</th>
+            <th>Trend</th>
+            <th>Comment</th>
+        </tr>
+        </thead>
+        <tbody>
+        <div class="ui bulleted list">
+
+        <tr>
+            <td> ${assessment.timestamp} </td>
+            <td> ${assessment.weight} </td>
+            <td> ${assessment.chest} </td>
+            <td> ${assessment.thigh} </td>
+            <td> ${assessment.upperarm} </td>
+            <td> ${assessment.waist} </td>
+            <td> ${assessment.hips} </td>
+            <td> ${assessment.trend} </td>
+            <td> ${assessment.comment} </td>
+        </div>
+        </tbody>
+    </table>
+    <form class="ui form" action="/trainer/${assessment.id}/addcomment" method="POST">
+        <div class="ui fluid action input">
+            <input type="text" placeholder="Enter Comment" name="comment">
+            <div><button class="ui blue submit button">Submit</button></div>
+        </div>
+    </form>
+
+</section>
+#{/list}
+#{/list}
+#{/if}
