@@ -36,6 +36,13 @@ public class Dashboard extends Controller
     render("dashboard.html", member, assessments, BMI, isIdealBodyWeight, BMICategory);
   }
 
+  public static void profile() {
+    Logger.info("Rendering Profile");
+    Member member = Accounts.getLoggedInMember();
+    List<Assessment> assessments = member.assessments;
+    render("profile.html", member);
+  }
+
   public static void deleteAssessment(Long id, Long assessmentid)
   {
     Member member = Member.findByID(id);
@@ -57,5 +64,17 @@ public class Dashboard extends Controller
     redirect("/dashboard");
   }
 
+  public static void updateMember(String name, String password, float height, float weight, String gender, long id)
+  {
+    Logger.info("update member " + id);
+    Member member = Member.findByID(id);
+    member.name = name;
+    member.password = password;
+    member.setHeight(height);
+    member.setStartWeight(weight);
+    member.setGender(gender);
+    member.save();
+    redirect("/dashboard");
+  }
 }
 

@@ -1,5 +1,7 @@
 package models;
 
+import controllers.Accounts;
+import play.Logger;
 import play.db.jpa.Model;
 
 import javax.persistence.CascadeType;
@@ -47,6 +49,7 @@ public class Member extends Model
     setStartWeight(weight);
     setGender(gender);
   }
+
   public float getHeight() {
     return height;
   }
