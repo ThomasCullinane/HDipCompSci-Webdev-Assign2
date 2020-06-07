@@ -1,7 +1,7 @@
 #{extends 'main.html' /}
 #{set title:'Profile' /}
 #{menu id:"profile"/}
-
+<section class="ui raised segment">
 <div class="ui two column grid basic middle aligned segment">
     <div class="column">
         <form class="ui stacked segment form" action="/profile/${member.id}/update" method="POST">
@@ -37,10 +37,11 @@
                 <label>Password</label>
                 <input type="password" name="password">
             </div>
-            <button class="ui blue submit button">Submit</button>
+            <button class="ui blue submit button">Update</button>
         </form>
     </div>
     <div class="column">
         <img class="ui image" src="/public/images/seticon.jpg">
     </div>
 </div>
+</section>

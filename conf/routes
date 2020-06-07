@@ -12,10 +12,11 @@ POST   /authenticate                            Accounts.authenticate
 GET    /logout                                  Accounts.logout
 
 GET     /dashboard                              Dashboard.index
-GET     /profile                                Dashboard.profile
-POST     /profile/{id}/update                    Dashboard.updateMember
+
 POST    /dashboard/addassessment                      Dashboard.addAssessment
 GET     /dashboard/{id}/deleteassessment/{assessmentid}     Dashboard.deleteAssessment
+GET     /profile                                Dashboard.profile
+POST     /profile/{id}/update                    Dashboard.updateMember
 GET     /trainer                                Admin.index
 GET     /trainer/{id}                           Admin.member
 POST     /trainer/{assessmentid}/addcomment     Admin.setComment
