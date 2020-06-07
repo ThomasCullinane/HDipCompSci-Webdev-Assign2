@@ -40,7 +40,8 @@ public class Dashboard extends Controller
     Logger.info("Rendering Profile");
     Member member = Accounts.getLoggedInMember();
     List<Assessment> assessments = member.assessments;
-    render("profile.html", member);
+    boolean bool = true;
+    render("profile.html", member, bool);
   }
 
   public static void deleteAssessment(Long id, Long assessmentid)
