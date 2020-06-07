@@ -39,8 +39,8 @@ public class Dashboard extends Controller
   public static void profile() {
     Logger.info("Rendering Profile");
     Member member = Accounts.getLoggedInMember();
-    boolean bool = true;
-    render("profile.html", member, bool);
+
+    render("profile.html", member);
   }
 
   public static void deleteAssessment(Long id, Long assessmentid)
